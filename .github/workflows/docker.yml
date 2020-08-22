@@ -1,0 +1,25 @@
+name: Docker workflow
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Build & publish image
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: ${{ github.repository }}/covidwithtech_app
+        registry: docker.pkg.github.com
+        username: ${{ github.actor }}
+        password: ${{ github.token }}
+    - name: Deploy to swarm
+      uses: sagebind/docker-swarm-deploy-action@v2
+      env:
+        APP_DOMAIN: ${{ secrets.APP_DOMAIN }}
+      with:
+        remote_host: ssh://${{ secrets.DOCKER_SSH_USER }}@${{ secrets.DOCKER_SSH_HOST }}
+        ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
+        ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
+        args: stack deploy --compose-file docker-compose.yml covidwithtech
