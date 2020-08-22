@@ -3,7 +3,7 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 
 
-import news
+import news, stats
 
 
 @app.route("/")
@@ -21,5 +21,8 @@ def actions():
 
     if task == "news":
         return news.action(data)
+
+    if task == "stats":
+        return stats.action(data)
 
     return {"actions": [{"say": f"That task ({task}) wasn't recognized"}]}
