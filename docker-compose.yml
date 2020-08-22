@@ -8,6 +8,7 @@ services:
         command: gunicorn -b 0.0.0.0 app:app
         environment:
             DOMAIN: ${APP_DOMAIN}
+            NEWS_API_KEY: ${NEWS_API_KEY}
         networks:
             - default
             - traefik

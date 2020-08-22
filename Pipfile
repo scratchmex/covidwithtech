@@ -9,6 +9,9 @@ gunicorn = "*"
 [packages]
 flask = "*"
 requests = "*"
+python-decouple = "*"
+twilio = "*"
+phonenumbers = "*"
 
 [requires]
 python_version = "3.8"
