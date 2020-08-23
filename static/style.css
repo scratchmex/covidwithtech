@@ -1,0 +1,5 @@
+div#banner{
+    background: url("/static/map.png");
+    background-size: cover;
+  background-position: center center;
+}

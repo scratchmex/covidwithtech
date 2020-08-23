@@ -11,12 +11,35 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-32x32.png') }}" sizes="32x32" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-16x16.png') }}" sizes="16x16" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
     <title>{% block title%}{% endblock %}</title>
 </head>
 
 <body>
     {% block content %}
     {% endblock %}
+
+    <footer class="py-3" style="background-color: aliceblue;">
+        <div class="container text-center">
+            <span class="text-muted">
+                Made with ❤️ by
+                <a href="https://www.linkedin.com/in/madina-masimova-56597919b/">Madina</a>,
+                <a href="https://www.linkedin.com/in/ivangonzalez1107/">Ivan</a>,
+                <a href="">Chinwe</a> &
+                <a href="">Manan</a>.
+                Proudly backed by <i class="fab fa-python"></i> <a href="https://python.org/">Python</a>.
+            </span>
+        </div>
+    </footer>
+
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/90e5d0d922.js" crossorigin="anonymous"></script>
+
+    <!-- Boostrap js -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

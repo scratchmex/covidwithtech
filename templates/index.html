@@ -1,13 +1,153 @@
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}covidwith.tech{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="row col py-5">
-        <h1>COVID-19 with techonolgy</h1>
-        <p>We need to stop the fake news and overcome this pandemic together with help of the techonolgy</p>
+<div>
+    <div class="jumbotron jumbotron-fluid" id="banner">
+        <div class="container">
+            <p class="text-muted text-sm-right">Our website is <i class="fas fa-mobile"></i> friendly.</p>
+        </div>
+        <div class="container">
+            <div class="row col pb-5 align-items-center">
+                <h1 class="text-center">COVID-19 with .tech</h1>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-5">
+                    <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" class="img-fluid">
+                </div>
+                <div class="col-md-7 text-md-right">
+                    <p class="lead font-weight-bold" style="color: gray">
+                        Covid-19 is our new reality. We are all in in this together and need each other to go through
+                        difficult times. These times fake news may cause anxiety.
+                    </p>
+                    <p class="lead font-weight-bold" style="color: gray">
+                        We can stop this and overcome the pandemic together with the help of technology.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="container">
+        <div class="row py-3">
+            <div class="col">
+
+                <h2>What is it?</h2>
+                <p>
+                    We made a bot, Covid-19 Buddy, for you to feel comfortable to talk to. Ask your Buddy about current
+                    Covid-19 cases, tell your Buddy to verify URL source and ask for mental support. We got your back.
+                </p>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col">
+
+                <h2>Why?</h2>
+                <p>
+                    Primarily, we care about you and your wellbeing. We use WhatsApp because it is accessible for all.
+                    There are many resources, but nowhere you can easily obtain this information without being
+                    overwhelmed. Besides, we have all significant resources in one.
+                </p>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col">
+
+                <h2>How can I use it?</h2>
+                <p>
+                    To begin, connect to your bot by sending a <b>WhatsApp message</b> from
+                    your device to <a href="https://wa.me/14155238886"><i class="fab fa-whatsapp"></i> +1 415 523
+                        8886</a>
+                    (click the number to open WhatsApp) with the text <b>join think-our</b>.
+                    After that, you can start interacting with the bot (a <i>Hello</i> it's a
+                    good start).
+                </p>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col">
+                <h2>FAQ</h2>
+                <div class="pt-1">
+                    <div class="py-1">
+                        <h4>Why to choose Covid-19 Buddy?</h4>
+                        <p>Covid-19 Buddy helps you to find answers to many questions regarding current Covid-19
+                            situation.
+                        </p>
+                    </div>
+                    <div class="py-1">
+                        <h4>How Covid-19 Buddy is built?</h4>
+                        <p>
+                            Covid-19 Buddy uses the <a href="https://www.twilio.com/whatsapp">Twilio API for
+                                WhatsApp</a> to
+                            send and receive the WhatsApp messages. For the speech recognition we used
+                            <a href="https://www.twilio.com/autopilot">Twilio Autopilot</a> and for the web app we used
+                            <a href="https://github.com/pallets/flask/">Flask</a> micro framework.
+                        </p>
+                        <p>
+                            The info we provide, news and stats are given by <a
+                                href="https://newsapi.org/">NewsAPI</a>
+                            and <a href="https://covid19api.com/">Covid-19 API</a>, respectively.
+                        </p>
+                    </div>
+                    <div class="py-1">
+                        <h4>How does Covid-19 Buddy recognize my country?</h4>
+                        <p>Covid-19 Buddy automatically detects country by the international code of your number, but
+                            you
+                            can
+                            also ask for a specific country, just tell it; e.g, <i>How is Mexico doing with covid?</i>
+                        </p>
+                    </div>
+                    <div class="py-1">
+                        <h4>Can I trust to the provided news about Covid-19?</h4>
+                        <p>Yes, Covid-19 Buddy uses verified information and can even check URL source provided by you
+                            to
+                            avoid
+                            freud.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-md-5">
+                <a href="https://mhacks.org/">
+                    <img class="img-fluid" src="{{ url_for('static', filename='mhacks.png') }}" alt="">
+                </a>
+            </div>
+            <div class="col">
+                <p class="lead">
+                    This project was made for the <a href="https://mhacks-13-beta.devpost.com/">MHacks 13 beta</a>
+                    hackaton.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col text-right">
+                <p class="lead">
+                    <a href="https://github.com/scratchmex/covidwithtech/"><i class="fab fa-github"></i> Github source
+                        code</a>
+                </p>
+            </div>
+        </div>
+
+
+
+        <!-- <div class="row">
+            <div class="col">
+                <form action="{ url_for('parse') }" method="POST" class="form-inline">
+                    <div class="form-group">
+                        <label class="mr-3">Link</label>
+                        <input type="url" class="form-control" name="url" placeholder="Enter the URL here"></input>
+                    </div>
+                    <button type="submit" class="btn btn-primary ml-3">Verify</button>
+                </form>
+            </div>
+        </div> -->
     </div>
 </div>
 {% endblock %}
